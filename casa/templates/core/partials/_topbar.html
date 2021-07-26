@@ -1,0 +1,91 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info for LANGUAGE_CODE as lang %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<!-- Top Bar -->
+<section id="top-bar" class="p-0 bg-primary sticky-top">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-3">
+         <a class="text-secondary" href="#">
+            <i class=" fas fa-phone"></i> +591(67121268)
+          </a> 
+      </div>
+      <div class="col-md-3">
+         <a class="text-secondary" href="#">
+        <i class="fas fa-envelope-open"></i> velvan45@gmail.com
+         </a> 
+      </div>
+
+      <div class="col-md-3">
+
+        <div class="social text-right">
+         @derecho de author WignerIvan
+
+        </div>
+      </div>
+
+      <div class="col-md-3">
+      <div class="social text-right">
+          <a href="#">
+            <i class="text-secondary fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="text-secondary fab fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="text-secondary fab fa-linkedin"></i>
+          </a>
+          <a href="#">
+            <i class="text-secondary fab fa-instagram"></i>
+          </a>
+
+        </div>
+        
+      </div>
+
+
+      <!--
+        <div class="text-right">
+        
+
+          <!--iframe src="https://maps.google.com/maps?q={{ listing.get_coordinates.address }}&hl=en&z=14&amp;output=embed" frameborder="0" style="border:0" allowfullscreen> Mi mapa Actual</iframe
+        </div>
+        div class="col-md-3">
+        <div class="text-right">
+          {% for language in languages %}
+
+          <a href="#{{ language.code }}" onclick="set_language('{{ language.code }}')" {% if classes.a_class != '' %}
+            class="{{ classes.a_class }}" {% endif %} title="{{ language.name_local }}">
+            <span class="flag-icon flag-icon-{{ language.code }} {{ icon_class }}"></span>
+          </a>
+          {% endfor %}
+
+          <form action="{% url 'set_language' %}" method="post" id="setlang">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <input type="hidden" name="language" id="language">
+          </form>
+
+          <script type="text/javascript">
+            if (window.location.hash) {
+              var hash = window.location.hash;
+              document.getElementById('language').value = hash.replace('#', '');
+              document.getElementById('setlang').submit()
+            }
+            function set_language(language) {
+              $('input[name="language"]').val(language);
+              $('form#setlang').submit();
+            }
+          </script>
+        </div>
+      </div-->
+    </div>
+  </div>
+</section>
+
